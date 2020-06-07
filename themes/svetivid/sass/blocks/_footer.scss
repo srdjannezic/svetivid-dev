@@ -1,0 +1,255 @@
+//-------------------------
+//----------- FOOTER
+//-------------------------
+
+.footer {
+	position: relative;
+	padding: 24.6rem 0 2rem;
+	@extend %clearfix;
+	background-image: url('../images/footer-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center; 
+	@include breakpoint(tablet) {
+		padding: 24.6rem 0 4rem;
+	}
+	@include breakpoint(mobile) {
+		background-image: url('../images/footer-bg-mob.png');
+	}
+	&__logo {
+		@extend %clearfix;
+		float: left;
+		width: 168px;
+		margin-bottom: 4.4rem;
+		@include breakpoint(tablet) {
+			float: none;
+			margin: 0 auto;
+			width: 50%;
+		}
+		@include breakpoint(mobile) {
+			width: 21.9rem;
+		}
+	}
+	&-info {
+		clear: both;
+		color: $c-white;
+		@include breakpoint(tablet) {
+			margin-top: 7rem;
+			text-align: center;
+		}
+		@include breakpoint(mobile) {
+			margin-top: 5.2rem;
+		}
+		p {
+			margin-bottom: 10px;
+			font-size: 14px;
+			@include breakpoint(tablet) {
+				margin-bottom: 4rem;
+				font-size: 3rem;
+			}
+			@include breakpoint(mobile) {
+				margin-right: 0px;
+				margin-bottom: 4.8rem;
+				font-size: 1.5rem;
+			}
+			@include breakpoint(mobile--s) {
+				font-size: 15px;
+			}
+			a {
+				color: $c-white;
+			}
+			i {
+				margin-right: 10px;
+				@include breakpoint(mobile) {
+					 position: relative;
+					top: 7px;
+					font-size: 25px;
+				}
+			}
+		}
+	}
+	.container {
+		position: relative;
+	}
+	&__nav {
+		position: absolute;
+		top: 0rem;
+		left: 30%;
+		width: 400px;
+		height: 182px;
+		@include breakpoint(tablet) {
+			position: static;
+			width: 100%;
+			height: auto;
+			text-align: center;
+			margin: 4rem 0;
+		}
+		.logo-menu {
+			display: none;
+		}
+		ul {
+			width: 100%;
+			column-count: 2;
+			@include breakpoint(tablet) {
+				column-count: 1;
+			}
+		}
+		li {
+			//float: left;
+			clear: left;
+			flex: 50%;
+			@include breakpoint(tablet) {
+				flex: 100%;
+			}
+			margin-bottom: 3.6rem;
+			@include breakpoint(mobile) {
+				margin-bottom: 2rem;
+			}
+			&:nth-child(n + 5) {
+				//float: right;
+				clear: right;
+			}
+		}
+		
+		li a {
+			font-size: 17px;
+			color: $c-lightBlue;
+			transition: all ease-in-out 0.2s;
+			@include breakpoint(tablet) {
+				font-size: 3rem;
+			}
+			@include breakpoint(mobile) {
+				font-size: 23px;
+			}
+			&:hover {
+				color: $c-lightBlue-hover;
+			}
+		}
+	}
+	&__form {
+		position: absolute;
+		top: -4rem;
+		right: 0;
+		width: 30%;
+		@include breakpoint(tablet) {
+			position: static;
+			width: 100%;
+		}
+		@include breakpoint(mobile) {
+			padding: 0 2rem;
+			text-align: center;
+		}
+		.form-item {
+			position: relative;
+			width: 100%;
+			margin-bottom: 40px;
+			label {
+				position: absolute;
+				left: 0;
+				bottom: -20px;
+				color: $c-white;
+			}
+			textarea,
+			input {
+				width: 100%;
+				height: 40px;
+				padding: 15px 0;
+				border: none;
+				outline: none; 
+				color: $c-white;
+				background-color: transparent;
+				border-bottom: 1px solid $c-white;
+				-webkit-appearance: none;
+			    -moz-appearance:    none;
+			  	appearance:         none;
+			  	overflow: hidden;
+			  	resize: none;
+			}
+		}
+		.button {
+			margin-left: 0;
+			margin-right: 0;
+			padding: 12px 46px 14px;
+			background-color: $c-mainRed;
+			border-radius: 6px;
+			font-size: 17px;
+			color: $c-white;
+			border: none;
+			transition: all ease-in-out 0.2s;
+			&:hover {
+				background-color: $c-mainRed-hover;
+			}
+		}
+	}
+	div#block-socialicons {
+		@include breakpoint(tablet) {
+			@include absolute(center-horizontal);
+			width: 100%;
+			bottom: -10rem;
+		}
+		ul {
+			@include breakpoint(tablet) {
+				padding: 0;
+			}
+		}
+	}
+	.social-icons {
+		margin-top: 4rem;
+		li {
+			display: inline-block;
+			position: relative;
+			width: 40px;
+			height: 40px;
+			
+			@include breakpoint(mobile) {
+				margin: 0 1rem;
+			}
+			&:last-child {
+				i:before {
+					top: 51%;
+					font-size: 22px;
+					@include breakpoint(tablet) {
+						top: 50%;
+						font-size: 4rem;
+					}
+				}
+			}
+			i {
+				
+				font-size: 0;
+				color: $c-white;
+				&:before {
+					@include absolute(center);
+					font-size: 34px;
+					color: $c-white;
+					@include breakpoint(tablet) {
+						font-size: 6.5rem;
+					}
+				} 
+			}
+		}
+	}
+	&__top {
+		margin-bottom: 8rem;
+		@include breakpoint(tablet) {
+			margin-bottom: 12.5rem;
+		}
+	}
+	&__bottom {
+		border-top: 1px solid #75c4ea;
+		text-align: center;
+		p {
+			margin-top: 14px;
+			font-size: 12px;
+			font-weight: 300;
+			line-height: 1.83;
+			color: $c-lightBlue;
+		}
+	}
+} 
+
+@media screen and (max-width: 1300px) {
+	.footer__form {
+		right: 6rem;
+	}
+}

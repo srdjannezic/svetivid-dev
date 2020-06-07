@@ -1,0 +1,10 @@
+
+{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+<nav {{ attributes }} role="navigation" aria-labelledby="{{ heading_id }}">
+  <div class="nav-wrapper">
+    <img src="/themes/svetivid/logo-white.svg" class="logo-menu" />
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</nav>

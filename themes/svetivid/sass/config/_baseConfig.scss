@@ -1,0 +1,76 @@
+//-------------------------
+//--------------BASE CONFIG
+//-------------------------
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+body {
+    font-family: $baseFont;
+    font-size: 18px;
+    overflow-x: hidden;
+    color: $c-text;
+}
+.container {
+	max-width: 1204px;
+	width: 100%;
+	margin: 0 auto;
+    padding: 0;
+    @include breakpoint(desktop--small) {
+        
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 0 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .container {
+        padding: 0 6rem;
+        @include breakpoint(mobile) {
+            padding: 0 2.5rem;
+        }
+    }
+    .header__main .container {
+        padding: 0 6rem;
+        @include breakpoint(mobile) {
+            padding: 0 2.5rem;
+        }
+    }
+ }
+
+h4, .h4, h5, .h5, h6, .h6 {
+    margin: 0;
+}
+
+p:empty {
+    display: none;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+div#cookies-notice {
+    display: none;
+}
+
+h1,h2,h3,h4 {
+    font-weight: normal;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+
+

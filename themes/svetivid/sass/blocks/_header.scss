@@ -1,0 +1,546 @@
+//-------------------------
+//----------- HEADER
+//-------------------------
+
+
+.header {
+	width: 100%;
+	border-bottom: 1px solid #cadae0;
+	z-index: 999999999999;
+	position: relative;
+	.container {
+		position: relative;
+	}
+	&__top {
+		@extend %clearfix;
+		padding: 10px 0;
+		font-size: 14px;
+		color: $c-white;
+		background-color: $c-mainBlue;
+		@include breakpoint(desktop--small) {
+			z-index: 9999999999999999;
+    		position: relative;
+    		border-bottom: 1px solid $c-lightBlue;
+    		width: 100%;
+		}
+
+	}
+	&__main {
+		position: relative;
+		background-color: $c-white;
+		transition: all ease-in-out 0.4s!important;
+		width: 100%;
+		.container {
+			position: static;
+			padding: 30px 0 29px;
+			@extend %clearfix;
+			@include breakpoint(desktop--small) {
+				position: relative;
+				padding-left: 6rem;
+				padding-right: 6rem;
+			}
+			@include breakpoint(desktop--small) {
+		        padding: 3.5rem 2.5rem;
+		    }
+		}
+	}
+	.lang-switcher {
+		position: absolute;
+		top: 3px;
+		right: 0;
+		width: 60px;
+		font-family: $baseFont;
+		cursor: pointer;
+		background-color: $c-mainBlue;
+		z-index: 5;
+		@include breakpoint(tablet) {
+			right: 6rem;
+		}
+		@include breakpoint(mobile) {
+			right: 2.5rem;
+		}
+		.is-active {
+			color: $c-white;
+		}
+		.flag {
+			@include breakpoint(mobile--s) {
+				position: relative;
+				top: -1px;
+			}
+		}
+		.links {
+			position: relative;
+			margin-left: 0;
+			z-index: 55;
+			background-color: $c-mainBlue;
+			padding-top: 19px;
+		}
+		.links li {
+			display: none;
+			padding: 5px;
+			width: 100%;
+			z-index: 555;
+			margin-bottom: 1rem;
+			list-style: none;
+			@include breakpoint(tablet) {
+				margin-bottom: 1.4rem;
+			}
+			@include breakpoint(mobile) {
+				margin-bottom: 2.4rem;
+			}
+			&:nth-of-type(2) {
+				margin-top: 1rem;
+				@include breakpoint(tablet) {
+					margin-top: 1.4rem;
+				}
+			}
+			&.is-active {
+				display: block;
+				position: absolute;
+				top: 0;
+				margin-top: 0;
+				padding: 0 5px;
+				line-height: 5;
+			}
+			a {
+				display: block;
+				width: 130%;
+				font-family: $baseFont;
+				color: $c-white;
+				font-size: 14px;
+			    line-height: 0.8;
+				@include breakpoint(mobile--s) {
+					font-size: 12px;
+				}
+				&:after {
+					display: block;
+					position: absolute;
+					top: 4px;
+					right: 0px;
+					content: "";
+					width: 0; 
+					height: 0; 
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 5px solid #fff;
+					z-index: 55;
+					@include breakpoint(mobile) {
+						top: 2px;
+					}
+				}
+			}
+
+		}
+		
+	}
+	&__logo {
+		display: block;
+		float: left;
+		width: 218px;
+		height: auto;
+		@include breakpoint(mobile) {
+			width: 24.3rem;
+		}
+		@include breakpoint(mobile--s) {
+			width: 20rem;
+		}
+	}
+	.logo-menu {
+		display: none;
+		@include breakpoint(desktop--small) {
+			display: block;
+			width: 218px;
+		    position: fixed;
+		    top: 60px;
+		    left: 5rem;
+		    z-index: 66;
+		}
+		@include breakpoint(mobile) {
+			top: 100px;
+			left: 3.5rem;
+			width: 24.3rem;
+		}
+		@include breakpoint(mobile--s) {
+			width: 20rem;
+		}
+	}
+	&__nav {
+		float: right;
+		padding-top: 23px;
+		font-size: 19px;
+		@include breakpoint(desktop--small) {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding-top: 170px;
+			padding-right: 6rem;
+			background-color: $c-mainBlue;
+			z-index: 555;
+			overflow-y: scroll;
+
+		}
+		@include breakpoint(mobile) {
+			padding-right: 3rem;
+			padding-top: 25rem;
+		}
+		&.contextual-region {
+			position: static;
+		}
+		.nav-wrapper {
+			@include breakpoint(mobile) {
+				padding-bottom: 6rem;
+				z-index: 9999999;
+			}
+		}
+		.nav-wrapper >ul>li {
+			display: inline-block;
+			margin-right: 2.5rem;
+			list-style: none;
+			@include breakpoint(desktop--small) {
+				display: block;
+				text-align: right;
+				margin-right: 0;
+				margin-bottom: 6rem;
+			}
+			@include breakpoint(mobile) {
+				margin-bottom: 3rem;
+			}
+			&:after {
+				display: block;
+				width: 100%;
+				height: 20px;
+				content: "";
+				@include breakpoint(desktop--small) {
+					display: none;
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			} 
+			&:hover,
+			&.active {
+				&>a {
+					color: $c-redText;
+					@include breakpoint(desktop--small) {
+						color: $c-white;
+					}
+				}
+			}
+			&:hover {
+				@include breakpoint(exeptGadgets) {
+					transition: all ease-in-out 0.3s; 
+					.subNav-holder {
+						opacity: 1;
+						visibility: visible;
+					}
+ 				}
+			}
+		}
+		a {
+			font-weight: 600;
+			color: $c-navBlue;
+			@include breakpoint(desktop--small) {
+				font-size: 4rem;
+				color: $c-white;
+			}
+			@include breakpoint(mobile--s) {
+				font-size: 24px;
+			}
+		}
+	}
+	&__subNav {
+		opacity: 0.8;
+		column-count: 3;
+		@include breakpoint(desktop--small) {
+			column-count: 1;
+		}
+		li {
+			margin-bottom: 1rem;
+			list-style: none!important;
+			@include breakpoint(desktop--small) {
+				margin-bottom: 2rem;
+				text-align: right;
+			}
+			@include breakpoint(mobile) {
+				margin-bottom: 1.8rem;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			color: $c-subBlue;
+			@include breakpoint(exeptGadgets) {
+				transition: all ease-in-out 0.2s;
+			}
+			@include breakpoint(desktop--small) {
+				font-size: 3rem;
+				//color: $c-white;
+				line-height: 1.2;
+			}
+			@include breakpoint(mobile--s) {
+				font-size: 2.4rem;
+				opacity: 0.8;
+			}
+			&:hover {
+				@include breakpoint(exeptGadgets) {
+					color: $c-mainRed;
+				}
+			}
+		}
+	}
+}
+
+.top-info {
+	float: left;
+	@include breakpoint(mobile) {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	    flex-direction: row;
+	    flex-flow: row wrap;
+	    justify-content: flex-start;
+	    width: 85%;
+	}
+	@include breakpoint(mobile--s) {
+		width: 86%;
+	}
+	@include breakpoint(mobile--xs) {
+		width: 94%;
+	}
+	div#block-phone {
+		@include breakpoint(mobile) {
+			margin-right: 0.4rem;
+			order: 1;
+		}
+	}
+	div#block-mobilephone {
+		@include breakpoint(mobile) {
+			order: 3;
+		}
+	}
+	div#block-location {
+		@include breakpoint(mobile) {
+			order: 2;
+		}
+		span {
+			// @include breakpoint(mobile) {
+			// 	display: none;
+			// }
+			em {
+				font-style: normal;
+				@include breakpoint(mobile--s) {
+					display: none;
+				}
+			}
+		}
+		i {
+			top: -4px;
+			font-size: 22px;
+			@include breakpoint(mobile--s) {
+				font-size: 19px;
+				top: -2px;
+			}
+			@include breakpoint(mobile--xs) {
+				font-size: 14px;
+			}
+		}
+	}
+	div#block-email {
+		@include breakpoint(mobile) {
+			order: 4;
+		}
+		span {
+			// @include breakpoint(mobile) {
+			// 	display: none;
+			// }
+		}
+	}
+	.info-item {
+		position: relative;
+		float: left;
+		padding-right: 5rem;
+		@include breakpoint(mobile) {
+			padding-right: 1rem;
+			margin: 0.5rem 0;
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -0.2rem;
+			right: 2.5rem;
+			width: 1px;
+			height: 2rem;
+			background-color: $c-lightBlue;
+			@include breakpoint(tablet) {
+				display: none;
+			}
+		}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+		p {
+			font-size: 14px;
+			@include breakpoint(mobile--s) {
+				font-size: 12px;
+			}
+			i {
+				vertical-align: middle;
+				position: relative;
+    			top: -2px;
+    			margin-right: 1rem;
+				font-size: 18px;
+				color: $c-lightBlue;
+				@include breakpoint(mobile) {
+					color: #0f6399;
+				}
+				@include breakpoint(mobile--xs) {
+					font-size: 12px;
+				}
+			}
+			a {
+				color: $c-white;
+
+			}
+			span {
+				@include breakpoint(tablet) {
+					display: none;
+				}
+				@include breakpoint(mobile) {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+
+.subNav-holder {
+	//display: none;
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	min-height: 30rem;
+	margin-top: -30px;
+	transition: all ease-in-out 0.3s; 
+	visibility: hidden;
+	background-color: transparent;
+	z-index: 555;
+	@include breakpoint(desktop--small) {
+		position: static;
+		width: 100%;
+		margin-top: 0;
+		height: 0;
+		opacity: 1;
+		visibility: visible;
+		overflow: hidden;
+		min-height: auto;
+		transition: all ease-in-out 0.2s;
+
+	}
+} 
+
+.subNav-wrapper {
+	position: absolute;
+	margin-top: 30px;
+	background: rgba(255,255,255,0.85);
+	height: 100%;
+	width: 100%;
+	left: 0;
+	.container {
+		@include breakpoint(desktop--small) {
+			padding-right: 0!important;
+		}
+	}
+	@include breakpoint(desktop--small) {
+		position: static;
+		margin-top: 0;
+		background-color: transparent;
+	}
+}
+
+nav#block-svetivid-main-menu:after {
+	@include breakpoint(desktop--small) {
+		position: fixed;
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    height: 162px;
+	    top: 0;
+	    left: 0;
+	    background: $c-mainBlue;
+	}
+	@include breakpoint(mobile--s) {
+		height: 135px;
+	}
+}
+
+.sticky-holder {
+	position: relative;
+	width: 100%;
+	padding: 30px 0 29px; 
+	@include breakpoint(mobile) {
+		padding: 21px 0;
+		height: auto;
+	}
+	.header__main {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.space-holder {
+	height: 64.125px;
+	@include breakpoint(mobile) {
+		width: 100%;
+		height: 6.8rem;
+	}
+	@include breakpoint(mobile--s) {
+		height: 5.3rem;
+	}
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .header__main .container {
+        padding: 21px 6rem;
+        @include breakpoint(mobile) {
+        	padding: 21px 2.5rem;
+        }
+        @include breakpoint(mobile--s) {
+        	padding: 18px 2.5rem;
+        }
+    }
+    .sticky-holder {
+    	padding: 21px 0;
+    }
+    .header .lang-switcher {
+    	right: 6rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+	 .header .lang-switcher {
+    	right: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+	.header .logo-menu {
+		top: 80px;
+	}
+} 
+
+
+

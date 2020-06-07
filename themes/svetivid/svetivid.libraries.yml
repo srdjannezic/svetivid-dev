@@ -1,0 +1,14 @@
+global-styling:
+  version: 1.1
+  css:
+    theme:
+      css/style.css: {}
+      css/updates.css: {}
+      /libraries/slick/slick/slick-theme.css: {}
+      '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700': { type: external, minified: true }
+
+global-scripts:
+  version: 1.3
+  js:
+    js/main.js: {}
+    /libraries/slick/slick/slick.min.js: {}

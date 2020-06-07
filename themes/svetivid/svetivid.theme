@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bartik theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+
+function svetivid_preprocess_views_view_field(&$variables) {
+	//var_dump('test');
+  if ($variables['field']->field == 'view_node') {
+    $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $url = $variables['row']->_entity->getTranslation($language_code)->url();
+    $text = $variables['field']->original_value->__toString();
+    $markup = '<a href="' . $url . '">' . $text . '</a>';
+    $variables['output'] = \Drupal\views\Render\ViewsRenderPipelineMarkup::create($markup);
+  }
+}

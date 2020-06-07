@@ -1,0 +1,60 @@
+//-------------------------
+//--------------TITLES
+//-------------------------
+
+.page-title {
+	margin-top: 8rem;
+	margin-bottom: 38px;
+	font-size: 56px;
+	font-weight: 900;
+	text-align: center;
+	@include breakpoint(mobile) {
+		margin-bottom: 3rem;
+		font-size: 4rem;
+		text-transform: uppercase;
+	}
+}
+
+.page-subtitle {
+	width: 78rem;
+	margin: 0 auto;
+	margin-bottom: 7.4rem;
+	font-size: 21px;
+	line-height: 1.2;
+	text-align: center;
+	color: $c-text;
+	@include breakpoint(tablet) {
+		width: 100%;
+		padding: 0 8rem;
+	}
+	@include breakpoint(mobile) {
+		margin-bottom: 4rem;
+		padding: 0 4rem;
+		
+	}
+	p {
+		@include breakpoint(mobile) {
+			font-size: 2.2rem!important;
+		}
+	}
+}
+
+.secTitle {
+	font-size: 30px;
+	@include breakpoint(mobile) {
+		
+	}
+}
+.miniTitle {
+	margin-bottom: 10px;
+	font-size: 24px;
+	@include breakpoint(mobile) {
+		
+	}
+}
+
+.page-title, 
+.secTitle {
+	color: $c-titleBlue;
+}
+
